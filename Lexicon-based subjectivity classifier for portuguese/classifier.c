@@ -6,8 +6,6 @@
 #include <ctype.h>
 #define BUFFER_SIZE 5192
 
-
-
 typedef struct Dictio{
 	char word[100];
 }Dictio;
@@ -17,7 +15,6 @@ int binary_search(Dictio* v, char* chave, int beg, int end);
 void mergesort (Dictio* v, int beg, int end);
 Dictio* create_Dictio(FILE* in, int* n);
 void classifying(Dictio* dic_pos, Dictio* dic_neg, FILE* read, FILE* class, int positive_size, int negative_size, int flag);
-
 
 int main(int argc, char const *argv[])
 {
@@ -40,8 +37,6 @@ int main(int argc, char const *argv[])
 	FILE *read = fopen(reading, "r");
 	FILE *class = fopen("resultado.txt", "w");
 
-	
-
 	dic_pos = create_Dictio(pos, &positive_size);
 	dic_neg = create_Dictio(neg, &negative_size);
 	mergesort(dic_pos, 0, positive_size-1);
@@ -55,7 +50,6 @@ int main(int argc, char const *argv[])
 	fclose(neg);
 	fclose(read);
 	fclose(class);
-
 	
 	return 0;
 }
@@ -166,7 +160,6 @@ void classifying(Dictio* dic_pos, Dictio* dic_neg, FILE* read, FILE* class, int 
 			strcpy(expression, "\0");
 		}
 
-		
 		strcpy(ans, expression);
 		if (binary_search(dic_pos, convert_lower(ans), 0, positive_size-1))
 		{
@@ -177,5 +170,4 @@ void classifying(Dictio* dic_pos, Dictio* dic_neg, FILE* read, FILE* class, int 
 			negat++;
 		}
 	}
-	
 }
