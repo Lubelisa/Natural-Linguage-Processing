@@ -64,7 +64,7 @@ def determining_the_height_of_the_tree(set_segments, dict_id_parent):
 ###############################################################################		
 
 # READING ALL THE RST RELATIONS
-lines_relations = open('all_relations.txt', 'r').readlines()
+lines_relations = open('relacoes.txt', 'r').readlines()
 lines_relations = [lr.replace('\n', '') for lr in lines_relations]
 dict_relations = dict()
 for lr in lines_relations:
@@ -79,7 +79,7 @@ txt_frases = [txtl.replace("\n", "") for txtl in txt_frases]
 txt_frases = [txtl.replace("\r", "") for txtl in txt_frases]
 txt_frases = [txtl.lower() for txtl in txt_frases]
 
-frases_relacoes = open('frases_relacoes.csv', 'w')
+frases_relacoes = open('atributos.csv', 'w')
 frases_relacoes.write("adverbintensewords,adverbnegativewords,pontuationexclamation,pontuationinterrogation,nucleussubjwordsproportion,satelitessubjwordsproportion,")
 frases_relacoes.write("relationmotivation,relationinterpretation,relationantithesis,relationenablement,relationunstatedrelation,relationevidence,relationvolitionalresult,relationrestatement,relationattribution,relationvolitionalcause,relationnonvolitionalresult,relationmeans,relationevaluation,relationconclusion,relationelaboration,relationunless,relationcircumstance,relationexplanation,relationpurpose,relationbackground,relationcondition,relationcomparison,relationsolutionhood,relationsummary,relationpreparation,relationnonvolitionalcause,relationparenthetical,relationconcession,relationjustify,relationunconditional,relationotherwise,relationconjunction,relationsameunit,relationsequence,relationlist,relationjoint,relationrestatementmn,relationdisjunction,relationcontrast,treemaxnconnections\n")
 
